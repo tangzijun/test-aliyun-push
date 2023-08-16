@@ -4,6 +4,7 @@ import 'expo-dev-client';
 import { StatusBar } from 'expo-status-bar';
 import { Alert, Button, Platform, StyleSheet, Text, View } from 'react-native';
 import * as AliyunPush from 'aliyun-react-native-push'
+import * as Notifications from 'expo-notifications';
 
 export default function App() {
   return (
@@ -88,8 +89,8 @@ export default function App() {
          const getApnsDeviceTokenRes = await AliyunPush.getApnsDeviceToken();
          console.info('=======aliyun:getApnsDeviceTokenRes======', getApnsDeviceTokenRes);
 
-        //  const getDevicePushTokenAsyncRes = await Notifications.getDevicePushTokenAsync();
-        //  console.info('=======expo:getDevicePushTokenAsyncRes======', getDevicePushTokenAsyncRes);
+         const getDevicePushTokenAsyncRes = await Notifications.getDevicePushTokenAsync();
+         console.info('=======expo:getDevicePushTokenAsyncRes======', getDevicePushTokenAsyncRes);
       }}></Button>
     </View>
   );
